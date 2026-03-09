@@ -53,7 +53,7 @@ int main()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	GLFWwindow* window = glfwCreateWindow(1680, 1050, "ImGui + GLFW", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 600, "ImGui + GLFW", NULL, NULL);
 	if (window == NULL)
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
@@ -80,6 +80,7 @@ int main()
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
 	ImGui_ImplOpenGL3_Init("#version 330");
 
+	
 	ImFontConfig font_cfg;
 	font_cfg.FontDataOwnedByAtlas = false;
 	io.Fonts->AddFontFromMemoryTTF(
@@ -90,11 +91,16 @@ int main()
 		io.Fonts->GetGlyphRangesThai()
 	);
 
+	
+
+	// test messge for nvim lol 
+	// ด่ฟหสด่ เทสภาษาไทบ	
+
 	// ** 3. สร้าง Objects **
 	Shader myShader(vertexShaderSource, fragmentShaderSource);
 	// Triangle myTriangle;
 	UIManager ui;
-
+	
 
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
@@ -132,8 +138,6 @@ int main()
 		glfwPollEvents();
 	}
 
-	// 5. Cleanup (แก้ไขส่วนนี้)
-	// ** ต้องเรียกใช้ ImGui_ImplGlfw_Shutdown(window) **
 	ImGui_ImplOpenGL3_Shutdown();
 	ImGui_ImplGlfw_Shutdown(); // ไม่ต้องใส่ 'window' ถ้าใช้ InitForOpenGL(window, true)
 	ImGui::DestroyContext();

@@ -224,7 +224,7 @@ void UIManager::drawTerminalWindow() {
                 ImGui::TextDisabled("DirectX9:");
                 ImGui::Text("0 - ImTextureID = LPDIRECT3DTEXTURE9");
                 ImGui::Text("1 - See ImGui_ImplDX9_RenderData() function in imgui_impl_dx9.cpp");
-                ImGui::Text("");
+		ImGui::Text("");
                 ImGui::TextDisabled("DirectX11:");
                 ImGui::Text("10 - ImTextureID = ID3D11ShaderResourceView*");
                 ImGui::Text("11 - See ImGui_ImplDX11_RenderData() function in imgui_impl_dx11.cpp");
